@@ -587,3 +587,73 @@ document.addEventListener("DOMContentLoaded", function () {
   addProductToCart();
 
 });
+
+/* =========================
+   PRODUCT OPTIONS
+========================= */
+
+function setupProductOptions() {
+
+  const productPage =
+    document.querySelector(".product-detail");
+
+  if (!productPage) {
+    return;
+  }
+
+
+  /* COLOUR BUTTONS */
+
+  const colourButtons =
+    document.querySelectorAll(
+      ".product-option:first-of-type .option-btn"
+    );
+
+
+  colourButtons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+      colourButtons.forEach(btn => {
+        btn.classList.remove("selected");
+      });
+
+      button.classList.add("selected");
+
+    });
+
+  });
+
+
+  /* SIZE BUTTONS */
+
+  const sizeButtons =
+    document.querySelectorAll(
+      ".size-options .option-btn"
+    );
+
+
+  sizeButtons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+      sizeButtons.forEach(btn => {
+        btn.classList.remove("selected");
+      });
+
+      button.classList.add("selected");
+
+    });
+
+  });
+
+}
+
+
+/* START PRODUCT OPTIONS */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  setupProductOptions();
+
+});
