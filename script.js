@@ -430,3 +430,160 @@ document.addEventListener("DOMContentLoaded", function () {
   loadProduct();
 
 });
+
+/* =========================
+   ADD PRODUCT TO CART
+========================= */
+
+function addProductToCart() {
+
+  const productPage =
+    document.querySelector(".product-detail");
+
+  if (!productPage) {
+    return;
+  }
+
+
+  const addButton =
+    document.getElementById("add-to-cart");
+
+  if (!addButton) {
+    return;
+  }
+
+
+  addButton.addEventListener("click", function () {
+
+    const params =
+      new URLSearchParams(window.location.search);
+
+    const productId =
+      params.get("product");
+
+
+    if (!productId || !products[productId]) {
+      return;
+    }
+
+
+    const product =
+      products[productId];
+
+
+    /* SELECTED COLOUR */
+
+    const colourOption =
+      document.querySelector(".product-option");
+
+    let selectedColor = "";
+
+    if (colourOption) {
+
+      const selected =
+        colourOption.querySelector(".option-btn.selected");
+
+      if (selected) {
+        selectedColor = selected.textContent;
+      }
+
+    }
+
+
+    /* SELECTED SIZE */
+
+    const sizeOption =
+      document.querySelector(".size-options");
+
+    let selectedSize = "";
+
+    if (sizeOption) {
+
+      const selected =
+        sizeOption.querySelector(".option-btn.selected");
+
+      if (selected) {
+        selectedSize = selected.textContent;
+      }
+
+    }
+
+
+    /* QUANTITY */
+
+    const quantityElement =
+      document.getElementById("quantity");
+
+    const quantity =
+      quantityElement
+        ? Number(quantityElement.textContent)
+        : 1;
+
+
+    /* ADD ITEM */
+
+    const existingItem =
+      cart.find(item =>
+        item.productId === productId &&
+        item.color === selectedColor &&
+        item.size === selectedSize
+      );
+
+
+    if (existingItem) {
+
+      existingItem.quantity += quantity;
+
+    } else {
+
+      cart.push({
+
+        productId: productId,
+
+        name: product.name,
+
+        category: product.category,
+
+        price: product.price,
+
+        image: product.image,
+
+        color: selectedColor,
+
+        size: selectedSize,
+
+        quantity: quantity
+
+      });
+
+    }
+
+
+    saveCart();
+
+
+    /* BUTTON FEEDBACK */
+
+    addButton.textContent =
+      "ADDED TO CART ✓";
+
+
+    setTimeout(function () {
+
+      addButton.textContent =
+        "ADD TO CART";
+
+    }, 1500);
+
+  });
+
+}
+
+
+/* START ADD TO CART */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  addProductToCart();
+
+});
