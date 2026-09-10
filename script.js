@@ -137,6 +137,337 @@ const products = {
    CART
 ========================================= */
 
+let cart = [];
+
+try {
+
+  const savedCart =
+    localStorage.getItem("cherylsCart");
+
+  if (savedCart) {
+    cart = JSON.parse(savedCart);
+  }
+
+  if (!Array.isArray(cart)) {
+    cart = [];
+  }
+
+} catch (error) {
+
+  cart = [];
+
+}
+
+
+/* =========================================
+   SAVE CART
+========================================= */
+
+function saveCart() {
+
+  localStorage.setItem(
+    "cherylsCart",
+    JSON.stringify(cart)
+  );
+
+}
+
+
+/* =========================================
+   LOAD PRODUCT
+========================================= */
+
+function loadProduct() {
+
+  const productPage =
+    document.querySelector(".product-detail");
+
+  if (!productPage) {
+    return;
+  }
+
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const productId =
+    params.get("product");
+
+  const product =
+    products[productId];
+
+
+  if (!product) {
+    return;
+  }
+
+
+  /* BASIC INFORMATION */
+
+  const image =
+    productPage.querySelector(
+      ".product-detail-image div"
+    );
+
+  const category =
+    productPage.querySelector(
+      ".product-category"
+    );
+
+  const name =
+    productPage.querySelector(
+      ".product-detail-info h1"
+    );
+
+  const price =
+    productPage.querySelector(
+      ".product-detail-price"
+    );
+
+  const description =
+    productPage.querySelector(
+      ".product-description"
+    );
+
+
+  if (image) {
+    image.textContent =
+      product.image;
+  }
+
+  if (category) {
+    category.textContent =
+      product.category;
+  }
+
+  if (name) {
+    name.textContent =
+      product.name;
+  }
+
+  if (price) {
+    price.textContent =
+      "₦" +
+      product.price.toLocaleString();
+  }
+
+  if (description) {
+    description.textContent =
+      product.description;
+  }
+
+
+  /* =========================================
+     COLOUR OPTIONS
+  ========================================= */
+
+  const optionBlocks =
+    productPage.querySelectorAll(
+      ".product-option"
+    );
+
+  const colourOption =
+    optionBlocks[0];
+
+
+  if (colourOption) {
+
+    const heading =
+      colourOption.querySelector("h3");
+
+
+    colourOption
+      .querySelectorAll(".option-btn")
+      .forEach(button => {
+        button.remove();
+      });
+
+
+    if (product.colors.length > 0) {
+
+      product.colors.forEach(
+        (color, index) => {
+
+          const button =
+            document.createElement(
+              "button"
+            );
+
+          button.type =
+            "button";
+
+          button.className =
+            "option-btn" +
+            (
+              index === 0
+                ? " selected"
+                : ""
+            );
+
+          button.textContent =
+            color;
+
+
+          button.addEventListener(
+            "click",
+            function () {
+
+              colourOption
+                .querySelectorAll(
+                  ".option-btn"
+                )
+                .forEach(btn => {
+
+                  btn.classList.remove(
+                    "selected"
+                  );
+
+                });
+
+
+              button.classList.add(
+                "selected"
+              );
+
+            }
+          );
+
+
+          if (heading) {
+
+            heading.after(button);
+
+          } else {
+
+            colourOption.appendChild(
+              button
+            );
+
+          }
+
+        }
+      );
+
+    }
+
+  }
+
+
+  /* =========================================
+     SIZE OPTIONS
+  ========================================= */
+
+  const sizeOptions =
+    productPage.querySelector(
+      ".size-options"
+    );
+
+  const sizeOptionBlock =
+    size    image: "👗",
+    description: "Backless bodycon mermaid dress with a sleeveless design.",
+    colors: ["Black", "Red"],
+    sizes: ["S", "M", "XL"]
+  },
+
+  "sweat-shirt": {
+    name: "Sweat Shirt",
+    category: "TOPS",
+    price: 15700,
+    image: "👚",
+    description: "One-shoulder long-sleeve top for an effortless everyday look.",
+    colors: ["Black"],
+    sizes: ["S", "M", "XL"]
+  },
+
+  "slim-fit-shirt": {
+    name: "Slim Fit Shirt",
+    category: "TOPS",
+    price: 9500,
+    image: "👚",
+    description: "Slim-fit casual crew-neck flared long-sleeve pleated shirt.",
+    colors: ["Black"],
+    sizes: ["S", "M", "L"]
+  },
+
+  "pant-trousers": {
+    name: "Pant Trousers",
+    category: "BOTTOMS",
+    price: 12000,
+    image: "👖",
+    description: "A versatile pair of trousers designed to complete your everyday looks.",
+    colors: ["Black"],
+    sizes: ["M", "XL", "XXL"]
+  },
+
+  "long-sleeve-top-skirt": {
+    name: "Long Sleeve Top with Skirt",
+    category: "TWO-PIECE SETS",
+    price: 20400,
+    image: "🎀",
+    description: "Casual off-the-shoulder short top with long sleeves and a slimming high mermaid skirt.",
+    colors: ["Black"],
+    sizes: ["S", "M", "XL"]
+  },
+
+  "hoodie-tank-trousers": {
+    name: "Hoodie, Tank Top & Trousers",
+    category: "GOING-OUT",
+    price: 23100,
+    image: "✨",
+    description: "Three-piece set featuring a hooded sweatshirt, tank top and casual trousers.",
+    colors: ["Black"],
+    sizes: ["S", "M", "L", "XL"]
+  },
+
+  "hooded-sweatshirt-set": {
+    name: "Hooded Sweatshirt Set",
+    category: "GOING-OUT",
+    price: 27600,
+    image: "✨",
+    description: "Three-piece set featuring a hooded sweatshirt, suspender vest and long trousers.",
+    colors: ["Purple", "Grey", "Pink", "Black"],
+    sizes: ["S", "M", "XL"]
+  },
+
+  "blue-light-glasses": {
+    name: "Blue Light Glasses",
+    category: "ACCESSORIES",
+    price: 5700,
+    image: "👓",
+    description: "Anti-electronic blue light decorative glasses.",
+    colors: ["Golden Black", "Golden Pink"],
+    sizes: []
+  },
+
+  "classic-oval-glasses": {
+    name: "Classic Oval Glasses",
+    category: "ACCESSORIES",
+    price: 3800,
+    image: "👓",
+    description: "Classic oval-like shape glasses.",
+    colors: ["Black"],
+    sizes: []
+  },
+
+  "square-frame-glasses": {
+    name: "Square Frame Glasses",
+    category: "ACCESSORIES",
+    price: 4300,
+    image: "👓",
+    description: "Square-shaped paper-box-like glasses.",
+    colors: ["Black"],
+    sizes: []
+  }
+
+};
+
+
+/* =========================================
+   CART
+========================================= */
+
 let cart = JSON.parse(
   localStorage.getItem("cherylsCart")
 ) || [];
