@@ -657,3 +657,57 @@ document.addEventListener("DOMContentLoaded", function () {
   setupProductOptions();
 
 });
+
+/* =========================
+   PRODUCT QUANTITY
+========================= */
+
+function setupQuantity() {
+
+  const quantityElement =
+    document.getElementById("quantity");
+
+  const minusButton =
+    document.getElementById("quantity-minus");
+
+  const plusButton =
+    document.getElementById("quantity-plus");
+
+
+  if (!quantityElement || !minusButton || !plusButton) {
+    return;
+  }
+
+
+  let quantity = 1;
+
+
+  minusButton.addEventListener("click", function () {
+
+    if (quantity > 1) {
+      quantity--;
+    }
+
+    quantityElement.textContent = quantity;
+
+  });
+
+
+  plusButton.addEventListener("click", function () {
+
+    quantity++;
+
+    quantityElement.textContent = quantity;
+
+  });
+
+}
+
+
+/* START QUANTITY */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  setupQuantity();
+
+});
