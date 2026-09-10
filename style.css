@@ -554,3 +554,159 @@ footer {
   }
 
   }
+
+/* =========================
+   SHOP PAGE
+========================= */
+
+.page-hero {
+  padding: 90px 20px;
+  text-align: center;
+  background: var(--soft-pink);
+}
+
+.page-hero p {
+  color: var(--gold);
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.page-hero h1 {
+  font-size: 48px;
+  font-weight: normal;
+  color: var(--wine);
+  margin-bottom: 12px;
+}
+
+.page-hero span {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #694952;
+}
+
+
+/* SHOP CATEGORIES */
+
+.shop-section {
+  padding: 75px 6%;
+}
+
+.shop-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.shop-category-card {
+  background: var(--white);
+  border: 1px solid #f0dfe5;
+  transition: 0.25s;
+}
+
+.shop-category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(67, 37, 45, 0.08);
+}
+
+.shop-category-image {
+  height: 230px;
+
+  background:
+    linear-gradient(135deg, #f7e5ea, #ead2da);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 70px;
+}
+
+.shop-category-card > div:last-child {
+  padding: 22px;
+}
+
+.shop-category-card small {
+  color: var(--gold);
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.shop-category-card h3 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 8px;
+}
+
+
+/* SHOP MESSAGE */
+
+.shop-message {
+  text-align: center;
+  padding: 100px 25px;
+  background: var(--dark);
+  color: white;
+}
+
+.shop-message p {
+  color: var(--gold);
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.shop-message h2 {
+  font-size: 42px;
+  font-weight: normal;
+  line-height: 1.05;
+}
+
+
+/* SHOP MOBILE */
+
+@media (max-width: 700px) {
+
+  .page-hero {
+    padding: 65px 20px;
+  }
+
+  .page-hero h1 {
+    font-size: 40px;
+  }
+
+  .shop-section {
+    padding: 55px 18px;
+  }
+
+  .shop-category-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .shop-category-image {
+    height: 155px;
+    font-size: 48px;
+  }
+
+  .shop-category-card > div:last-child {
+    padding: 15px;
+  }
+
+  .shop-category-card h3 {
+    font-size: 16px;
+  }
+
+  .shop-message {
+    padding: 75px 20px;
+  }
+
+  .shop-message h2 {
+    font-size: 34px;
+  }
+
+}
