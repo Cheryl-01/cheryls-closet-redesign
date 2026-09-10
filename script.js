@@ -1,3 +1,5 @@
+alert("CHERYL'S CLOSET SCRIPT IS WORKING");
+
 /* =========================================
    CHERYL'S CLOSET
    MAIN JAVASCRIPT
