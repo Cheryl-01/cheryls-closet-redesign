@@ -244,9 +244,24 @@ function loadProduct() {
 
 
   if (image) {
+
+  if (product.image.includes(".")) {
+
+    image.innerHTML = `
+      <img
+        src="${product.image}"
+        alt="${product.name}"
+      >
+    `;
+
+  } else {
+
     image.textContent =
       product.image;
+
   }
+
+}
 
   if (category) {
     category.textContent =
