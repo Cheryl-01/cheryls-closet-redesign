@@ -14,7 +14,7 @@ const products = {
     name: "Mini Dress",
     category: "DRESSES",
     price: 13200,
-    image: "👗",
+    image:"IMG_20260818_134749.jpg",
     description: "Solid colour mini dress with a stand collar and shawl design.",
     colors: ["Black"],
     sizes: ["S", "M", "XL"]
