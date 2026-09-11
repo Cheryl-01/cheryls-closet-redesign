@@ -34,7 +34,7 @@ const products = {
     name: "Bodycon Dress",
     category: "DRESSES",
     price: 16800,
-    image: "👗",
+    image: "IMG_20260911_223700.jpg",
     description: "Backless bodycon mermaid dress with a sleeveless design.",
     colors: ["Black", "Red"],
     sizes: ["S", "M", "XL"]
