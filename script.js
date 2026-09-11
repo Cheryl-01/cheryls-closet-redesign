@@ -44,7 +44,7 @@ const products = {
     name: "Sweat Shirt",
     category: "TOPS",
     price: 15700,
-    image: "👚",
+    image: "IMG_20260818_133908.jpg",
     description: "One-shoulder long-sleeve top for an effortless everyday look.",
     colors: ["Black"],
     sizes: ["S", "M", "XL"]
