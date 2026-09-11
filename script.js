@@ -24,7 +24,7 @@ const products = {
     name: "Long Dress",
     category: "DRESSES",
     price: 17400,
-    image: "👗",
+    image:"IMG_20260818_134813.jpg",
     description: "Elegant asymmetric high-slit mermaid dress with a slim waist and micro fishtail train.",
     colors: ["Black"],
     sizes: ["S", "M", "XL"]
