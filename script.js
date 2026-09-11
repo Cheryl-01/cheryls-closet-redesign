@@ -74,7 +74,7 @@ const products = {
     name: "Long Sleeve Top with Skirt",
     category: "TWO-PIECE SETS",
     price: 20400,
-    image: "🎀",
+    image: "IMG_20260818_134307.jpg",
     description: "Casual off-the-shoulder short top with long sleeves and a slimming high mermaid skirt.",
     colors: ["Black"],
     sizes: ["S", "M", "XL"]
