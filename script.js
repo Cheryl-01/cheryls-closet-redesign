@@ -703,6 +703,113 @@ function setupAddToCart() {
 
 }
 
+/* =========================================
+   CATEGORY PAGE ADD TO CART
+========================================= */
+
+function setupCategoryAddToCart() {
+
+  const buttons =
+    document.querySelectorAll(
+      ".add-cart-btn"
+    );
+
+  buttons.forEach(
+    function (button) {
+
+      button.addEventListener(
+        "click",
+        function () {
+
+          const productId =
+            button.dataset.productId;
+
+          if (
+            !productId ||
+            !products[productId]
+          ) {
+            return;
+          }
+
+          const product =
+            products[productId];
+
+          const selectedColor =
+            product.colors.length > 0
+              ? product.colors[0]
+              : "";
+
+          const selectedSize =
+            product.sizes.length > 0
+              ? product.sizes[0]
+              : "";
+
+          const existingItem =
+            cart.find(
+              item =>
+                item.productId === productId &&
+                item.color === selectedColor &&
+                item.size === selectedSize
+            );
+
+          if (existingItem) {
+
+            existingItem.quantity += 1;
+
+          } else {
+
+            cart.push({
+
+              productId:
+                productId,
+
+              name:
+                product.name,
+
+              category:
+                product.category,
+
+              price:
+                product.price,
+
+              image:
+                product.image,
+
+              color:
+                selectedColor,
+
+              size:
+                selectedSize,
+
+              quantity:
+                1
+
+            });
+
+          }
+
+          saveCart();
+
+          button.textContent =
+            "ADDED TO CART ✓";
+
+          setTimeout(
+            function () {
+
+              button.textContent =
+                "ADD TO CART";
+
+            },
+            1500
+          );
+
+        }
+      );
+
+    }
+  );
+
+}
 
 /* =========================================
    DISPLAY CART
@@ -979,6 +1086,8 @@ function startCherylsCloset() {
   setupQuantity();
 
   setupAddToCart();
+
+  setupCategoryAddToCart();
 
   updateCart();
 
