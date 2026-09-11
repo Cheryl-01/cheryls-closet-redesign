@@ -54,7 +54,7 @@ const products = {
     name: "Slim Fit Shirt",
     category: "TOPS",
     price: 9500,
-    image: "👚",
+    image: "IMG_20260818_134242.jpg",
     description: "Slim-fit casual crew-neck flared long-sleeve pleated shirt.",
     colors: ["Black"],
     sizes: ["S", "M", "L"]
