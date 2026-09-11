@@ -719,6 +719,62 @@ function setupAddToCart() {
 }
 
 /* =========================================
+   LOAD CATEGORY PRODUCT IMAGES
+========================================= */
+
+function loadCategoryImages() {
+
+  const productLinks =
+    document.querySelectorAll(
+      ".product-card .product-image"
+    );
+
+  productLinks.forEach(function (link) {
+
+    const href =
+      link.getAttribute("href");
+
+    if (!href) {
+      return;
+    }
+
+    const params =
+      new URLSearchParams(
+        href.split("?")[1]
+      );
+
+    const productId =
+      params.get("product");
+
+    if (
+      !productId ||
+      !products[productId]
+    ) {
+      return;
+    }
+
+    const product =
+      products[productId];
+
+    if (
+      product.image &&
+      product.image.includes(".")
+    ) {
+
+      link.innerHTML = `
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+        >
+      `;
+
+    }
+
+  });
+
+}
+
+/* =========================================
    CATEGORY PAGE ADD TO CART
 ========================================= */
 
@@ -1097,6 +1153,8 @@ function removeFromCart(
 function startCherylsCloset() {
 
   loadProduct();
+
+  loadCategoryImages();
 
   setupQuantity();
 
