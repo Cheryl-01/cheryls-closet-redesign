@@ -84,7 +84,7 @@ const products = {
     name: "Hoodie, Tank Top & Trousers",
     category: "GOING-OUT",
     price: 23100,
-    image: "✨",
+    image: "IMG_20260818_135728.jpg",
     description: "Three-piece set featuring a hooded sweatshirt, tank top and casual trousers.",
     colors: ["Black"],
     sizes: ["S", "M", "L", "XL"]
@@ -94,7 +94,7 @@ const products = {
     name: "Hooded Sweatshirt Set",
     category: "GOING-OUT",
     price: 27600,
-    image: "✨",
+    image: "IMG_20260912_091612.jpg",
     description: "Three-piece set featuring a hooded sweatshirt, suspender vest and long trousers.",
     colors: ["Purple", "Grey", "Pink", "Black"],
     sizes: ["S", "M", "XL"]
