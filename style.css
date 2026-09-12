@@ -1351,3 +1351,21 @@ footer {
   object-fit: contain;
   display: block;
 }
+
+/* FINAL FIX — NEW ARRIVAL IMAGES */
+
+.featured-card .product-placeholder {
+  width: 100%;
+  height: 260px !important;
+  max-height: 260px !important;
+  overflow: hidden !important;
+}
+
+.featured-card .product-placeholder img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
