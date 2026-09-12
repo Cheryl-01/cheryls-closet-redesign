@@ -1336,3 +1336,18 @@ footer {
   object-fit: contain;
   display: block;
 }
+
+/* FIX PRODUCT IMAGE OVERFLOW */
+
+.product-placeholder {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.product-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
