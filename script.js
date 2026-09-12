@@ -104,7 +104,7 @@ const products = {
     name: "Blue Light Glasses",
     category: "ACCESSORIES",
     price: 5700,
-    image: "👓",
+    image: "IMG-20260912-WA0052.jpg",
     description: "Anti-electronic blue light decorative glasses.",
     colors: ["Golden Black", "Golden Pink"],
     sizes: []
@@ -114,7 +114,7 @@ const products = {
     name: "Classic Oval Glasses",
     category: "ACCESSORIES",
     price: 3800,
-    image: "👓",
+    image: "IMG_20260818_134335.jpg",
     description: "Classic oval-like shape glasses.",
     colors: ["Black"],
     sizes: []
@@ -124,7 +124,7 @@ const products = {
     name: "Square Frame Glasses",
     category: "ACCESSORIES",
     price: 4300,
-    image: "👓",
+    image: "IMG_20260818_134617.jpg",
     description: "Square-shaped paper-box-like glasses.",
     colors: ["Black"],
     sizes: []
