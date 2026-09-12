@@ -64,7 +64,7 @@ const products = {
     name: "Pant Trousers",
     category: "BOTTOMS",
     price: 12000,
-    image: "👖",
+    image: "IMG_20260817_100412.jpg",
     description: "A versatile pair of trousers designed to complete your everyday looks.",
     colors: ["Black"],
     sizes: ["M", "XL", "XXL"]
