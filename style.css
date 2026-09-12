@@ -1318,3 +1318,12 @@ footer {
   }
 
 }
+
+/* NEW ARRIVAL PRODUCT IMAGES */
+
+.product-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
