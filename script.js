@@ -973,8 +973,8 @@ function updateCart() {
       cartItem.innerHTML = `
 
         <div class="cart-item-image">
-          ${item.image}
-        </div>
+  <img src="${item.image}" alt="${item.name}">
+</div>
 
         <div class="cart-item-info">
 
